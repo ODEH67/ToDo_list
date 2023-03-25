@@ -23,30 +23,30 @@ const Title_text = document.querySelector("#list_title_1")
 
 //****** list input code ***************
 
-let inputArray = []
+let todosArray = []
 
 function addInput(inputValue) {
   const newInput = { id: Date.now().toString(), value: inputValue, grayed_out: false };
-  inputArray.push(newInput);
-  localStorage.setItem('input_Array', JSON.stringify(inputArray));
+  todosArray.push(newInput);
+  localStorage.setItem('input_Array', JSON.stringify(todosArray));
   return newInput;
 }
 
 function updateInput(inputId, newValues) {
-  const inputIndex = inputArray.findIndex(input => input.id === inputId);
+  const inputIndex = todosArray.findIndex(input => input.id === inputId);
   if (inputIndex !== -1) {
-    inputArray[inputIndex] = { ...inputArray[inputIndex], ...newValues };
-    localStorage.setItem('input_Array', JSON.stringify(inputArray));
+    todosArray[inputIndex] = { ...todosArray[inputIndex], ...newValues };
+    localStorage.setItem('input_Array', JSON.stringify(todosArray));
   }
 }
 
 function removeInput(inputId) {
-  inputArray = inputArray.filter(input => input.id !== inputId);
-  localStorage.setItem('input_Array', JSON.stringify(inputArray));
+  todosArray = todosArray.filter(input => input.id !== inputId);
+  localStorage.setItem('input_Array', JSON.stringify(todosArray));
 }
 
 function renderInputs() {
-  const inputs = inputArray;
+  const inputs = todosArray;
   adding_text.innerHTML = '';
   inputs.forEach(input => {
     const new_text = document.createElement('li');
@@ -117,7 +117,7 @@ adding_text.addEventListener('click', handleInputGrayOut);
 // Load the saved items from local storage
 const storageRecall = localStorage.getItem('input_Array');
 if (storageRecall) {
-  inputArray = JSON.parse(storageRecall);
+  todosArray = JSON.parse(storageRecall);
   renderInputs();
 }
 

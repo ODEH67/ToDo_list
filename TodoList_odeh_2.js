@@ -81,7 +81,7 @@ function grayed_click(event) {
 adding_text.addEventListener("click", grayed_click);
 
 //***** list input code ****************
-inputArray = []
+todosArray = []
 
 function textGen(e) {
 
@@ -104,8 +104,8 @@ function textGen(e) {
         new_text.textContent = input_value
         new_text.appendChild(Del_text)      //******* Del button
 
-        inputArray.push(input_value)
-        const stringArray = JSON.stringify(inputArray)
+        todosArray.push(input_value)
+        const stringArray = JSON.stringify(todosArray)
         localStorage.setItem('input_Array',stringArray)
         localStorage.setItem('del_button',Del_text)         //******* Del button
     } 
@@ -133,5 +133,5 @@ for(let i = 0; i< ReArray.length; i++) {
     new_text.textContent = ReArray[i]
     new_text.appendChild(Del_text)      //******* Del button
 
-    inputArray.push(ReArray[i])
+    todosArray.push(ReArray[i])
 }
