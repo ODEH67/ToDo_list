@@ -1,3 +1,17 @@
+//******************** dark mode ********************************
+const dark_mode_button = document.getElementById("dark_button")
+const bodyy = document.body
+dark_mode_button.addEventListener("click", ()=> {
+    document.body.classList.toggle("dark_mode")
+    localStorage.setItem("dark_mody", bodyy.classList.contains("dark_mode") ? "on" : "off");    // Save mode to local storage
+})
+
+const dark_mode_recall = localStorage.getItem("dark_mody");
+if (dark_mode_recall === "on") {
+bodyy.classList.add("dark_mode");
+} else {
+bodyy.classList.remove("dark_mode");
+}
 
 //****************** add new list ************************ */
 
