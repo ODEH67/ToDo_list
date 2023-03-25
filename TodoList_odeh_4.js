@@ -1,3 +1,4 @@
+//*****************dark mode************************* */
 const listTemplate = document.getElementById("list_template");
 const listDiv = document.querySelector(".list");
 const bodyy = document.body
@@ -14,6 +15,8 @@ bodyy.classList.add("dark_mode");
 } else {
 bodyy.classList.remove("dark_mode");
 }
+
+//*****************************************************/
 
 const allListsCounter = document.getElementById("allListsCounter");
 const assignedCounter = document.getElementById("assigned");

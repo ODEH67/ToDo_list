@@ -11,7 +11,7 @@
 
 .dark_mode {
     --primary-color: rgba(255, 255, 255, 0.963);
-    --secondary-color: rgba(64, 73, 108, 0.349);
+    --secondary-color: rgba(97, 106, 135, 0.413);
 }
 
 body {
@@ -57,7 +57,7 @@ header {
 
 .head a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: rgb(20, 32, 46);
 
 }
 
