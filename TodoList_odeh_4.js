@@ -1,4 +1,3 @@
-//*****************dark mode************************* */
 const listTemplate = document.getElementById("list_template");
 const listDiv = document.querySelector(".list");
 const bodyy = document.body
@@ -15,9 +14,6 @@ bodyy.classList.add("dark_mode");
 } else {
 bodyy.classList.remove("dark_mode");
 }
-
-//*****************************************************/
-
 const allListsCounter = document.getElementById("allListsCounter");
 const assignedCounter = document.getElementById("assigned");
 const inProgressCounter = document.getElementById("inProgress");
@@ -28,7 +24,7 @@ const completedCounter = document.getElementById("completed");
  */
 //  const todos = {};
 const todos = localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : {};
-// console.log(todos);
+console.log(todos);
 const Statuses = {
 	Assigned: 0,
 	InProgress: 1,
@@ -126,10 +122,12 @@ addListButton.addEventListener("click", () => {
 				const new_text = document.createElement("li");
 				const del_text = document.createElement("button");
 				del_text.innerHTML = "-";
-				del_text.style.backgroundColor = "red";
+				del_text.style.backgroundColor = "rgba(97, 106, 135, 0.413)";
 				del_text.style.border = "0";
-				del_text.style.padding = "5px";
+				del_text.style.padding = "0px 4px";
 				del_text.style.borderRadius = "5px";
+				del_text.style.marginLeft = "10px";
+				del_text.style.cursor = "pointer";
 
 				del_text.addEventListener("click", () => {
 					//   removeInput(input.id);
@@ -137,7 +135,7 @@ addListButton.addEventListener("click", () => {
 					updateTodosInLocalStorage();
 
 					new_text.remove();
-				});
+				}); //TODO
 
 				new_text.textContent = input_value;
 				new_text.appendChild(del_text);
@@ -259,10 +257,12 @@ function restoreTodos() {
 					var new_text = document.createElement("li");
 					var del_text = document.createElement("button");
 					del_text.innerHTML = "-";
-					del_text.style.backgroundColor = "red";
+					del_text.style.backgroundColor = "rgba(97, 106, 135, 0.413)";
 					del_text.style.border = "0";
-					del_text.style.padding = "5px";
+					del_text.style.padding = "0px 4px";
 					del_text.style.borderRadius = "5px";
+					del_text.style.marginLeft = "10px";
+					del_text.style.cursor = "pointer";
 
 					del_text.addEventListener("click", () => {
 						//   removeInput(input.id);
@@ -297,10 +297,12 @@ function restoreTodos() {
 			var new_text = document.createElement("li");
 			var del_text = document.createElement("button");
 			del_text.innerHTML = "-";
-			del_text.style.backgroundColor = "red";
+			del_text.style.backgroundColor = "rgba(97, 106, 135, 0.413)";
 			del_text.style.border = "0";
-			del_text.style.padding = "5px";
+			del_text.style.padding = "0px 4px";
 			del_text.style.borderRadius = "5px";
+			del_text.style.marginLeft = "10px";
+			del_text.style.cursor = "pointer";
 
 			del_text.addEventListener("click", () => {
 				delete todos[newList.id].todoItems[new_text.id]; // delete item from array
@@ -325,4 +327,3 @@ function restoreTodos() {
 	});
 	recalculateStatusCards();
 }
-
